@@ -1,0 +1,511 @@
+$vertfonce: #1A5901;
+$grisclair : #D1D1D1;
+$jauneor: #FFD700;
+
+body {
+    margin: 5px 0px 5px 0px;
+    display: flex;
+    flex-direction: column;
+    background-color: #D1D1D1;
+    font-family: roboto, sans-serif;
+}
+
+/*body tag*/
+/*partie qui va gerer le logo celui la est pour le bloc du logo*/
+.logo {
+    width: 300px;
+    margin-right: 10%;
+
+}
+
+
+/*image du logo*/
+#logopart1 {
+    height: 100%;
+    border-radius: 30px;
+}
+
+/*texte du logo*/
+#logopart2 {
+    height: 60%;
+    width: 50%;
+    align-self: center;
+}
+
+/*partie qui va gerer  la barre de recherche  dabbord il a  search-bar qui toute la barre de navigation avec absolument
+tout inclus dedans*/
+.barre {
+    display: flex;
+    border: solid $vertfonce 2px;
+    border-left: 0;
+    border-right: 0;
+    background-color: $vertfonce;
+    height: 60px;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 3;
+}
+
+/*la on a la vraie barre de recheche dabord le container qui est la pour le border et metre les 2 partie de la recherche
+ensemble*/
+.search-container {
+    align-self: center;
+    display: flex;
+    margin-right: 15%;
+    background-color: #f6f6f6;
+    border-radius: 20px;
+    padding: 5px 10px 5px 10px;
+    width: 40%;
+    justify-content: space-between;
+    height: 40px;
+}
+
+/*le logo dessin*/
+.logo-search {
+    color: #0ed114;
+    cursor: pointer;
+}
+
+/* le boutton pour lancer la recherche*/
+#button-search {
+    background-color: #f6f6f6;
+    height: 80%;
+    align-self: center;
+    border: 0;
+}
+
+/*la barre de recherche meme*/
+#search-tab {
+    align-self: center;
+    height: 75%;
+    border: 0;
+    margin-right: 5px;
+    background-color: #f6f6f6;
+    outline: none;
+    color: darkgreen;
+    width: 95%;
+
+    &::placeholder {
+        color: #0ed114;
+    }
+}
+
+/* fin de la partie pour la recherche et debus de la troisieme partie*/
+/* sa c'est pour la barre qui va venir a gauche quand on va apuyer sur le menu*/
+.sidebar {
+    position: fixed;
+    /* fixé en place*/
+    top: 0px;
+    right: 0;
+    height: 100vh;
+    width: 180px;
+    z-index: 999;
+    /* pour que ce soit au dessus de tout les autres element*/
+    background-color: rgba(246, 246, 246, 0.8);
+    /*pour que sa soit un peux transparent*/
+    backdrop-filter: blur(10px);
+    /* pour que sa soit un peu flouté*/
+    box-shadow: -10px 0 10Px rgba(0, 0, 0, 0.1);
+    /*l'ombre je peux en rajouter dans les autres elements */
+    display: none;
+    /* pour qu'il soit caché de base*/
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-top: 0px;
+
+    /*pour qu'il commence la ou est la barre pck c plus beau*/
+    &>li {
+        /* pour que la liste soit bien centré ect*/
+        padding-left: 0;
+        padding-top: 5%;
+        padding-bottom: 5%;
+        width: 100%;
+        justify-self: center;
+        display: flex;
+        align-items: center;
+        color: #0ed114;
+
+        /*c du hover bref*/
+        &:hover {
+            background-color: $grisclair
+        }
+    }
+}
+
+/* ce code agit a la fin de la barre principale il aligne les des logog de panier et menu et les rends beau */
+.logo-panier,
+.menu-bar {
+    color: white;
+    justify-self: center;
+    align-self: center;
+    height: 26px;
+    width: 26px;
+    cursor: pointer;
+
+    /* pour ameliorer l'alignement et la beauté ect*/
+    &.menu-bar {
+        margin-left: 25px;
+        background-color: transparent;
+        border: none;
+    }
+}
+
+/* conteneur flex pour les deux logos */
+.tabpartiegauche {
+    align-self: center;
+    display: flex;
+    flex-direction: row;
+    height: 60px;
+}
+
+/* style pour la cross*/
+.crosssidebar {
+    color: #0ed114;
+    align-self: flex-end;
+    cursor: pointer;
+}
+
+/*styles pour tout les symboles dans la tab ouverte*/
+.symbolist {
+    align-self: center;
+    color: #0ed114;
+    padding-right: 10%;
+    cursor: pointer;
+}
+
+.sectionimage1 {
+    width: 80%;
+    align-self: center;
+    margin-top: 20px;
+    height: 500px;
+    display: grid;
+    grid-template-rows: repeat(10, 50px);
+    grid-template-columns: repeat(24, 50px);
+}
+
+#soldesimg {
+    width: 200px;
+}
+
+#image1 {
+    z-index: 1;
+    grid-row-start: 1;
+    grid-row-end: 11;
+    grid-column-start: 1;
+    grid-column-end: 21;
+    height: 100%;
+    width: 100%;
+    filter: blur(5px);
+}
+
+.soldes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #A481C5;
+    font-weight: bolder;
+    color: #f6f6f6;
+    grid-row-start: 3;
+    grid-row-end: 8;
+    grid-column-start: 7;
+    grid-column-end: 14;
+    z-index: 2;
+    border-radius: 20px;
+}
+
+#shopnow {
+    justify-self: flex-end;
+    margin-top: 40px;
+    color: #f6f6f6;
+    background-color: darkred;
+    border-radius: 20px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border: none;
+    width: 80%;
+    font-size: x-large;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+
+    &:hover {
+        background-color: white;
+        color: $jauneor;
+        /* Couleur de fond lors du survol */
+        transform: scale(1.05);
+        /* Agrandir légèrement */
+    }
+
+    &:active {
+        background-color: $jauneor;
+        color: white;
+        /* Couleur de fond lors du clic */
+        transform: scale(0.98);
+        /* Rétrécir légèrement */
+    }
+}
+
+
+/*partie pour le footer fait par lia a modifier*/
+footer {
+    background-color: $vertfonce;
+    color: white;
+    padding: 0;
+
+    & h3 {
+        margin-bottom: 20px;
+    }
+}
+
+.footer-container {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 0 50px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+    margin: 20px;
+}
+
+.footer-section {
+
+    p,
+    ul,
+    li {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    ul {
+        padding-left: 0;
+
+        li {
+            margin-bottom: 10px;
+            display: inline-block;
+
+            a {
+                color: white;
+                text-decoration: none;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
+
+
+.social-icons a {
+    display: inline-block;
+    margin-right: 10px;
+    color: white;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 20px 0;
+    background-color: $vertfonce;
+
+    & p {
+        margin: 0;
+    }
+}
+
+
+.produitspharecontainer {
+    margin-top: 40px;
+    display: flex;
+    width: 100%;
+    height: 400px;
+    margin-bottom: 25px;
+    background-color: $vertfonce;
+    flex-direction: column;
+
+    &>h2 {
+        color: white;
+        align-self: center;
+    }
+}
+
+.produitsphare {
+    justify-self: flex-start;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    height: 100%;
+    width: 100%;
+    justify-content: space-evenly;
+    padding: 0;
+
+    &.deux {
+        >li {
+            border: #f6f6f6 solid 2px;
+            background-color: white;
+        }
+
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    &>li {
+        text-decoration: none;
+        flex-direction: column;
+        height: 100%;
+        color: white;
+        width: 260px;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+}
+
+.imagefleursphare {
+    border-radius: 20px;
+    width: 100%;
+    max-width: 182px;
+}
+
+
+li>h3 {
+    color: $jauneor;
+    font-weight: 900;
+    cursor: pointer;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+
+.containerplus {
+    height: 500px;
+    margin-top: 10px;
+}
+
+.Shopnow {
+    margin-top: 20px;
+    width: 120px;
+    height: 50px;
+    border: none;
+    border-radius: 12px;
+    background-color: $jauneor;
+    color: $vertfonce;
+    font-size: large;
+    font-weight: 400;
+    box-shadow: -10px 0 10Px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+
+    &:hover {
+        background-color: white;
+        /* Couleur de fond lors du survol */
+        transform: scale(1.05);
+        /* Agrandir légèrement */
+    }
+
+    &:active {
+        background-color: #3e8e41;
+        /* Couleur de fond lors du clic */
+        transform: scale(0.98);
+        /* Rétrécir légèrement */
+    }
+}
+
+li>p {
+    margin-bottom: 0;
+}
+
+.categoriecontainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+
+    &>h3 {
+        color: $jauneor;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+}
+
+.categoriesbutton {
+    width: 10%;
+    border-radius: 10px;
+    border: none;
+    background-color: darkred;
+    color: $jauneor;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $jauneor;
+        color: darkred;
+        /* Couleur de fond lors du survol */
+        transform: scale(1.05);
+        /* Agrandir légèrement */
+    }
+
+    &:active {
+        background-color: $jauneor;
+        color: white;
+        /* Couleur de fond lors du clic */
+        transform: scale(0.98);
+        /* Rétrécir légèrement */
+    }
+}
+
+
+.categoriestext {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-height: 50px;
+
+    & p {
+        margin: 0px 5px;
+        /* Espacement entre les éléments */
+
+        /* Forcer les éléments à occuper 100% de la largeur disponible */
+        color: #fff;
+        /* Ajout de la couleur blanche pour le texte */
+        padding-bottom: 5px;
+        position: relative;
+
+        &::after {
+            content: "";
+            position: absolute;
+            /*important jsp pk*/
+            background-color: $jauneor;
+            height: 3px;
+            width: 0;
+            bottom: 0px;
+            transition: 0.3s ease-in;
+            left: -0px;
+        }
+
+        &:hover {
+            cursor: pointer;
+            color: $jauneor;
+
+            &::after {
+                width: 100%;
+            }
+        }
+    }
+}

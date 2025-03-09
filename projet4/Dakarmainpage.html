@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <title>La Ville De Dakar</title>
+    <link rel="icon" href="iconecarapide.jpeg">
+    <link rel="stylesheet" href="styledkr.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <nav>
+        <h1>Dakar</h1>
+        <div class="deuxiemepart">
+            <div class="symbolpart">
+                <button id="login" class="navbutton"><span class="material-symbols-outlined">
+                        person
+                    </span></button>
+                <button id="navigation-button" class="navbutton" onclick="ShowSideBar()"><span class="
+                    material-symbols-outlined">
+                        menu
+                    </span></button>
+                <div> <!-- barre interieure-->
+                    <ul class="sidebar" style="list-style: none; padding: 0;" id="sidebar">
+                        <span class="material-symbols-outlined crosssidebar" Onclick="Hidesidebar()">
+                            close
+                        </span>
+                        <li><span class="material-symbols-outlined symbolist">
+                                person
+                            </span>Login</li>
+                        <li><span class="material-symbols-outlined symbolist">
+                                payments
+                            </span>Service et paiement</li>
+                        <li><span class="material-symbols-outlined symbolist">
+                                diversity_1
+                            </span>Communautée</li>
+                        <li> <span class="material-symbols-outlined symbolist">
+                                add_business
+                            </span>Buisness et economie</li>
+                        <li> <span class="material-symbols-outlined symbolist">
+                                hiking
+                            </span>Explorer et activités</li>
+                        <li><span class="material-symbols-outlined symbolist">
+                                energy
+                            </span>environement</li>
+                        <li> <span class="material-symbols-outlined symbolist">
+                                balance
+                            </span>Justice</li>
+                        <li> <span class="material-symbols-outlined symbolist">
+                                traffic_jam
+                            </span>Entretien et circulation</li>
+                        <li> <span class="material-symbols-outlined symbolist">
+                                fitness_center
+                            </span>Sport</li>
+                        <li><span class="material-symbols-outlined symbolist">
+                                emergency
+                            </span>Santé</li>
+                        <li> <span class="material-symbols-outlined symbolist">
+                                home
+                            </span>About us</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="langpart">
+                <button class="languagebutton fr">
+                    <p>fr</p>
+                </button>
+                <button class="languagebutton en">
+                    <p>en</p>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <div class="partieune">
+        <img src="dakarcorniche.jpg" class="imageville">
+        <div class="search-container">
+            <input id="search-tab" placeholder="que cherchez vous ?" type="search">
+            <button id="button-search"><span class="material-symbols-outlined">
+                    search
+                </span></button>
+        </div>
+    </div>
+    <div class="deroulécontainer">
+        <div class="titrederoul">
+            <h4>Les plus recherché</h4><span class="material-symbols-outlined">
+                add
+            </span>
+        </div>
+        <div class="deroulé">
+            <ul>
+                <p>Quels sont les sites touristiques incontournables à Dakar ?</p>
+                <div class="reponses">
+                    <li>g</li>
+                    <li>ffgegf</li>
+                    <li>rgt</li>
+                </div>
+            </ul>
+            <ul>
+                <p>Quels sont les meilleurs quartiers pour séjourner à Dakar ?</p>
+                <div class="reponses">
+                    <li>tgj</li>
+                    <li>rgg</li>
+                    <li>ggku</li>
+                </div>
+            </ul>
+            <ul>
+                <p>Quels sont les meilleurs endroits pour faire du shopping à Dakar ?</p>
+                <div class="reponses">
+                    <li>jy</li>
+                    <li>tuiè</li>
+                    <li>rjytj</li>
+                </div>
+            </ul>
+            <ul>
+                <p>Comment ce déplacer a Dakar?</p>
+                <div class="reponses">
+                    <li>uj-bt</li>
+                    <li>hhhè</li>
+                    <li>guju</li>
+                </div>
+            </ul>
+            <ul>
+                <p>culture et histoire</p>
+                <div class="reponses">
+                    <li>ku-tv</li>
+                    <li>-gy</li>
+                    <li>gvvt</li>
+                </div>
+            </ul>
+        </div>
+    </div>
+    <div class="activitécontainer">
+        <div class="act"><img src="img1.jpg">
+            <h5>Le tourisme a Dakar</h5>
+            <p>visitez les plus beaux coins de Dakar en un clic</p>
+        </div>
+        <div class="act"><img src="img2musee.jpg">
+            <H5> La culture senegalaise</h5>
+            <p> decouvrez la culture senegalaise dans toute ses facetttes</p>
+        </div>
+        <div class="act"><img src="img3taxi.jpg">
+            <h5>Se deplacer a Dakar</h5>
+            <p>déplacez vous dans la ville rapidement et efficacement</p>
+        </div>
+        <div class="act"><img src="img4sea plaza.jpg">
+            <h5> Faire ses achats </h5>
+            <p>Faites vos achats dans la Ville en un clic</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="section">
+            <ul>
+                <p>Contactez nous</p>
+                <li>Adresse: Dakar</li>
+                <li>Téléphone: +33 1 23 45 67 89</li>
+                <li>Email: DakarSpace@gmail.com</li>
+            </ul>
+        </div>
+        <div class="section">
+            <ul>
+                <p>navigation</p>
+                <li>Accueil</li>
+                <li>A propos</li>
+                <li>Services</li>
+            </ul>
+        </div>
+        <div class="section">
+            <ul>
+                <p>Suivez nous</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </ul>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var navButton = document.getElementById('navigation-button');
+            var sidebar = document.getElementById('sidebar');
+            var closeButton = document.querySelector('.crosssidebar');
+
+            navButton.addEventListener('click', function () {
+                sidebar.classList.toggle('visible');
+            });
+
+            closeButton.addEventListener('click', function () {
+                sidebar.classList.remove('visible');
+            });
+        });
+
+    </script>
+</body>
+
+</html>

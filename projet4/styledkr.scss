@@ -1,0 +1,347 @@
+$vertfonce: #1A5901;
+$grisclair : #e6e3e3;
+$jauneor: #FFD700;
+$scale: scale(0.98);
+$transitionback: background-color 0.3s ease-in;
+
+body {
+    font-family: roboto, sans-serif;
+    display: flex;
+    width: 100%;
+    margin: 0;
+    flex-direction: column;
+    background-color: $grisclair;
+}
+
+nav {
+    background-color: $vertfonce;
+    color: white;
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    & h1 {
+        font-family: Lobster, sans-serif;
+        padding: 2.3vw;
+    }
+
+    & button {
+        display: flex;
+        height: 6.9vw;
+        background-color: white;
+        border: none;
+        border-radius: 1vw;
+        align-items: center;
+        cursor: pointer;
+
+        & .material-symbols-outlined {
+            color: $vertfonce;
+        }
+
+        &:active {
+            background-color: $jauneor;
+            transform: $scale;
+            background-color: $transitionback;
+
+        }
+    }
+}
+
+.langpart {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 10px;
+
+    .languagebutton {
+        display: flex;
+        justify-content: center;
+        justify-self: center;
+        margin-right: 1.5vw;
+        font-weight: bold;
+        color: $vertfonce ;
+        width: 3.5vw;
+        font-size: x-small;
+        height: 3.5vw;
+        ;
+    }
+}
+
+.symbolpart {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.navbutton {
+    margin-right: 2vw;
+}
+
+.deuxiemepart {
+    display: flex;
+    flex-direction: row;
+}
+
+.partieune {
+    width: 94.8vw;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.imageville {
+    width: 100%;
+}
+
+.sidebar {
+    position: fixed;
+    /* fixé en place*/
+    top: 0px;
+    right: 0;
+    height: 100vh;
+    width: 180px;
+    z-index: 999;
+    /* pour que ce soit au dessus de tout les autres element*/
+    background-color: rgba(246, 246, 246, 0.8);
+    /*pour que sa soit un peux transparent*/
+    backdrop-filter: blur(2px);
+    /* pour que sa soit un peu flouté*/
+    box-shadow: -10px 0 10Px rgba(0, 0, 0, 0.1);
+    /*l'ombre je peux en rajouter dans les autres elements */
+    display: flex;
+    /* pour qu'il soit caché de base*/
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-top: 0px;
+    transform: translateX(100%); // Initially off-screen to the right
+    transition: transform 0.3s ease; // Smooth transition
+
+    &.visible {
+        transform: translateX(0); // Bring into view
+    }
+
+    /*pour qu'il commence la ou est la barre pck c plus beau*/
+    &>li {
+        /* pour que la liste soit bien centré ect*/
+        padding-left: 0;
+        padding-top: 5%;
+        padding-bottom: 5%;
+        width: 100%;
+        justify-self: center;
+        display: flex;
+        align-items: center;
+        color: $vertfonce;
+
+        /*c du hover bref*/
+        &:hover {
+            background-color: $grisclair
+        }
+
+        .symbolist {
+            padding-right: 5px;
+            padding-left: 5px;
+        }
+
+    }
+
+    .crosssidebar {
+        color: $vertfonce;
+        align-self: flex-end;
+        padding: 7px;
+    }
+}
+
+.search-container {
+    align-self: center;
+    display: flex;
+    background-color: rgba(246, 246, 246, 0.6);
+    border-radius: 20px;
+    padding: 5px 10px 5px 10px;
+    width: 60%;
+    justify-content: space-between;
+    height: 40px;
+    position: absolute;
+    backdrop-filter: blur(2px);
+}
+
+/*le logo dessin*/
+.logo-search {
+    color: #0ed114;
+    cursor: pointer;
+}
+
+/* le boutton pour lancer la recherche*/
+#button-search {
+    background-color: transparent;
+    height: 80%;
+    align-self: center;
+    border: 0;
+    border: none;
+    color: $vertfonce;
+    display: flex;
+    align-items: center;
+}
+
+/*la barre de recherche meme*/
+#search-tab {
+    align-self: center;
+    height: 75%;
+    border: 0;
+    margin-right: 5px;
+    background-color: transparent;
+    outline: none;
+    color: darkgreen;
+    width: 95%;
+
+    &::placeholder {
+        color: $vertfonce;
+        font-weight: bold;
+    }
+}
+
+.deroulécontainer {
+    display: flex;
+    flex-direction: column;
+    background-color: $vertfonce;
+    color: white;
+
+    .titrederoul {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    h4 {
+        align-self: center;
+        padding-left: 2.5vw;
+    }
+
+    .deroulé {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        p {
+            display: flex;
+            padding: 0;
+            margin: 0;
+        }
+
+        ul {
+            padding: 0;
+            margin: 0;
+            display: none;
+            background-color: $vertfonce;
+
+            .reponses {
+                display: none;
+                background-color: $vertfonce;
+                border-bottom: 2px solid $grisclair;
+            }
+        }
+    }
+}
+
+.activitécontainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-self: center;
+    margin-top: 10px;
+    align-items: center;
+
+    .act {
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        align-items: center;
+        border-radius: 20px;
+        background-color: $vertfonce;
+        margin-bottom: 4vw;
+
+        img {
+            width: 80%;
+        }
+
+        h5,
+        p {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            width: 100%;
+            text-align: center;
+        }
+
+        h5 {
+            margin: 0;
+            color: $jauneor;
+            padding-bottom: 5vw;
+            padding-top: 1vw;
+            background-color: $vertfonce;
+
+
+        }
+
+        p {
+            color: $vertfonce;
+            background-color: $jauneor;
+            border-radius: 0px 0px 20px 20px;
+        }
+    }
+}
+
+footer {
+    background-color: $vertfonce;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    color: white;
+
+    section {
+        padding-bottom: 5vw;
+    }
+
+    p,
+    li {
+        padding-top: 3vw;
+        text-align: center;
+    }
+
+    p {
+        margin: 0;
+        text-decoration-line: underline;
+        font-size: large;
+        font-weight: bold;
+    }
+
+    ul {
+        margin: 0;
+        padding: 0;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+
+        li {
+            list-style-type: none;
+
+            &:hover,
+            &:active {
+                cursor: pointer;
+                color: darkred;
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .fab {
+        color: white;
+        margin-top: 3vw;
+        width: 10vw;
+    }
+}

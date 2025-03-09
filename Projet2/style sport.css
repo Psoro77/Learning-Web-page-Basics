@@ -1,0 +1,175 @@
+body {
+	background-color: #030132;
+	display: flex;
+	flex-direction: column;
+	margin: 0;
+	margin-bottom: 15px;
+}
+
+#title {
+	color: white;
+	margin-left: 25%;
+	margin-right: 25%;
+	margin-top: 5%;
+	margin-bottom: 2%;
+}
+
+.formulaire1 {
+	border: 3px solid white;
+	border-radius: 20px;
+	position: sticky;
+}
+
+#condition {
+	padding-bottom: 10px;
+}
+
+form {
+	font-family: roboto, sans-serif;
+	display: flex;
+	height: auto;
+	width: 100%;
+	position: sticky;
+	align-content: center;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	align-items: start;
+	justify-content: space-evenly;
+}
+
+input {
+	margin-left: 3%;
+	color: #030132;
+}
+
+label {
+	padding-top: 5%;
+	padding-left: 10%;
+	padding-bottom: 5%;
+	display: block;
+}
+
+#check-sex {
+	display: inline;
+	padding-left: 10%;
+	padding-bottom: 5%;
+}
+
+.corps {
+	display: flex;
+	color: white;
+	margin-top: 5%;
+	flex-direction: column;
+}
+
+.plan {
+
+	display: flex;
+	flex-direction: column;
+	width: 80%;
+	border: 2px solid white;
+	height: 100%;
+	margin: 5%;
+	border-radius: 23px;
+}
+
+.box-plan {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border: solid white 3px;
+	border-radius: 25px;
+	width: 40%;
+}
+
+.plan-header {
+	color: #030132;
+	border-bottom: #030132 3px solid;
+	background-color: #FFD700;
+	width: 100%;
+	border-radius: 20px;
+	text-align: center;
+}
+
+.plan-type1 {
+	text-align: center;
+	color: #030132;
+	background-color: #CD7F32;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+	height: 20%;
+}
+
+button {
+	background-color: #FFD700;
+	border-radius: 15px;
+	border: #FFD700;
+}
+
+.check {
+	color: green;
+}
+
+.cross {
+	color: red;
+}
+
+ul {
+	list-style-type: none;
+}
+
+.plan-type2 {
+	text-align: center;
+	color: #030132;
+	background-color: #FFD700;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+	height: 20%;
+}
+
+.box-plan :hover {
+	opacity: 0.9;
+}
+
+.barre-de-menu {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	padding: 10px;
+	background-color: #0A1E25;
+	position: sticky;
+	height: 60px;
+}
+
+.menu {
+	list-style: none;
+	display: flex;
+	padding: 0;
+	margin: 0;
+	justify-content: center;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.navigation-item {
+	color: white;
+	font-size: 22px;
+	margin: 0px;
+	margin-left: 25px;
+	margin-right: 25px;
+	width: 160px;
+}
+
+.navigation-item :hover {
+	color: #FFD700;
+}
+
+#logo-site {
+	width: 75px;
+	height: 75px;
+}
+
+#button-nav {
+	font-size: 22px;
+	padding: 10px;
+}

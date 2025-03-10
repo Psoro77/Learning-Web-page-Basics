@@ -1,0 +1,85 @@
+.content {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    /* Prend toute la hauteur de la fenêtre */
+    padding: 10px;
+    box-sizing: border-box;
+    justify-content: space-around;
+}
+
+.similarproduct {
+    border: 3px solid black;
+    /* Fixed border */
+    flex: 0.5;
+    /* Takes less vertical space */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: lightgray;
+    /* Temporary for visualization */
+    height: 200px;
+    /* Example height; adjust as needed */
+}
+
+.buyproductbox {
+    display: flex;
+    /* Enable Flexbox */
+    flex-direction: column;
+    /* Stack productandbuy and description vertically */
+    width: 50%;
+    /* Full width for simplicity; adjust if needed */
+    height: auto;
+    /* Adjust height based on content */
+    margin-bottom: 20px;
+    /* Space between this and similarproduct */
+}
+
+.description {
+    background-color: lightgray;
+    /* Temporary for visualization */
+    padding: 20px;
+    /* Inner spacing */
+    margin-top: 20px;
+    /* Space above description */
+
+}
+
+
+/* Container for product image and buy box */
+.productandbuy {
+    display: flex;
+    /* Enable Flexbox for horizontal layout */
+    flex-direction: row;
+    /* Side-by-side alignment */
+    width: 100%;
+    /* Full width */
+    gap: 20px;
+    /* Space between productimage and buybox */
+}
+
+/* Product image section */
+.productimage {
+    flex: 1;
+    /* Equal space allocation */
+    background-color: lightgray;
+    /* Temporary for visualization */
+    height: 300px;
+    width: 50%;
+    /* Example height; adjust as needed */
+}
+
+.buybox {
+    flex: 1;
+    /* Equal space allocation */
+    background-color: lightgray;
+    /* Temporary for visualization */
+    height: 300px;
+    /* Example height; adjust as needed */
+}
+
+.flowerimg {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}

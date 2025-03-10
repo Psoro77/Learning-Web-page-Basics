@@ -8,12 +8,84 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
+    <link href="buypage.css" rel="stylesheet">
     <link href="stylesassplante.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 
 </head>
+
+<body>
+    <!-- first part with the nav bar -->
+    <nav class="barre">
+        <!-- logo du site-->
+        <div class="logo">
+            <img id="logopart1" alt="logo du site" src="logo-site.jpeg">
+            <img id="logopart2" alt="logo du site" src="logo-titre.png">
+        </div>
+        <!-- partie pour la recherche-->
+        <div class="search-container">
+            <input id="search-tab" placeholder="Search" type="search">
+            <button id="button-search"><i class="fas fa-search logo-search"></i></button>
+        </div>
+        <!-- partie gauche de la barre-->
+        <div class="tabpartiegauche">
+            <i class="fas fa-shopping-cart logo-panier"></i>
+            <i class="fas fa-bars menu-bar" onclick="ShowSideBar()"></i><!--afficher le menu interieur-->
+            <div> <!-- barre interieure-->
+                <ul class="sidebar" style="list-style: none; padding: 0;">
+                    <span class="material-symbols-outlined crosssidebar" Onclick="Hidesidebar()">
+                        close
+                    </span>
+                    <li><span class="material-symbols-outlined symbolist">
+                            person
+                        </span>login</li>
+                    <li><span class="material-symbols-outlined symbolist">
+                            yard
+                        </span>Our plants</li>
+                    <li><span class="material-symbols-outlined symbolist">
+                            potted_plant
+                        </span>pots and decoration</li>
+                    <li> <span class="material-symbols-outlined symbolist">
+                            favorite
+                        </span> Favorites</li>
+                    <li> <span class="material-symbols-outlined symbolist">
+                            home
+                        </span>About us</li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="content">
+        <div class="buyproductbox">
+            <div class="productandbuy">
+                <div class="productimage">
+                    <img src="roseenpot.jpg" class="flowerimg">
+                </div>
+                <div class="buybox">
+
+                </div>
+            </div>
+            <div class="description">
+                <p class="titre">Rose Écarlate "Amour Éternel"</p>
+                <p class="descriptiontxt">Plongez dans la beauté intemporelle de notre Rose Écarlate "Amour Éternel",
+                    une véritable œuvre de la nature qui incarne la passion et l'élégance. Avec ses pétales d’un rouge
+                    profond et velouté, cette rose est parfaite pour embellir votre jardin ou offrir un message d’amour
+                    inoubliable. Facile à entretenir, elle prospère dans un sol bien drainé avec une exposition
+                    ensoleillée, et son parfum délicat embaumera votre espace de vie. Ajoutez une touche de romantisme à
+                    votre collection botanique avec cette rose exceptionnelle, symbole d’affection et de beauté durable.
+                </p>
+            </div>
+
+        </div>
+        <div class="similarproduct">
+
+        </div>
+    </div>
+
+
+</body>
 
 
 </html>

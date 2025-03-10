@@ -380,6 +380,10 @@ li > h3:hover {
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
+.Shopnow a {
+  text-decoration: none;
+  color: inherit;
+}
 .Shopnow:hover {
   background-color: white;
   /* Couleur de fond lors du survol */

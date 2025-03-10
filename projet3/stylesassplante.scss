@@ -229,6 +229,7 @@ ensemble*/
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
 
+
     &:hover {
         background-color: white;
         color: $jauneor;
@@ -407,6 +408,11 @@ li>h3 {
     box-shadow: -10px 0 10Px rgba(0, 0, 0, 0.1);
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
 
     &:hover {
         background-color: white;

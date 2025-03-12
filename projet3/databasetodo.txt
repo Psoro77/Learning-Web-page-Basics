@@ -1,0 +1,4 @@
+create a database for the project in phpmyadmin called botanic space
+create a product table with productid name price and the address of the image
+create a client table with client id client name address hash-password email  and cart-id
+create a cart-table with client id product id

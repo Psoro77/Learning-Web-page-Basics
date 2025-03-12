@@ -1,0 +1,192 @@
+.content {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    /* Prend toute la hauteur de la fenêtre */
+    padding: 10px;
+    box-sizing: border-box;
+    justify-content: space-around;
+}
+
+.similarproduct {
+    /* Fixed border */
+    flex: 0.5;
+    /* Takes less vertical space */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: lightgray;
+    /* Temporary for visualization */
+    height: 90%;
+    /* Example height; adjust as needed */
+    flex-direction: column;
+    background-color: #f6f6f6;
+    border-radius: 5px;
+}
+
+.cartfull {
+    background-color: #F6F6F6;
+    border-radius: 5px;
+    display: flex;
+    /* Enable Flexbox */
+    flex-direction: column;
+    /* Stack productanddesc and confirmation vertically */
+    width: 50%;
+    /* Full width for simplicity; adjust if needed */
+    height: 100%;
+    /* Adjust height based on content */
+    margin-bottom: 20px;
+    /* Space between this and similarproduct */
+}
+
+.confirmation {
+    /* Fond clair, cohérent avec votre design */
+    padding: 20px;
+    /* Espacement interne, comme dans votre code */
+    margin-top: 20px;
+    /* Espacement avec la section précédente */
+    border-radius: 5px;
+    /* Coins arrondis pour un look moderne */
+
+    /* Ombre légère pour un effet 3D */
+}
+
+
+/* Container for product image and buy box */
+.productanddesc {
+    display: flex;
+    /* Enable Flexbox for horizontal layout */
+    flex-direction: row;
+    /* Side-by-side alignment */
+    width: 100%;
+    /* Full width */
+    gap: 20px;
+    /* Space between productimage and info */
+
+}
+
+/* Product image section */
+.productimage {
+    flex: 1;
+    /* Equal space allocation */
+    /* Temporary for visualization */
+    height: 300px;
+    width: 50%;
+    /* Example height; adjust as needed */
+    background-color: #1A5901;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.info {
+    flex: 1;
+    /* Equal space allocation */
+
+    /* Temporary for visualization */
+    height: 300px;
+    /* Example height; adjust as needed */
+    border: 3px black;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    text-align: center;
+}
+
+.flowerimg {
+    width: 75%;
+    height: 75;
+    border-radius: 5px;
+}
+
+.info button {
+    background-color: #1A5901;
+    border-radius: 4px;
+    color: white;
+    width: 75%;
+    border: none;
+    padding: 8px;
+    margin: 5px;
+    cursor: pointer;
+
+}
+
+.info h2 {
+    color: #1A5901;
+
+}
+
+.rating {
+    color: #1A5901;
+}
+
+.quantity-selector {
+    justify-self: center;
+    margin-top: 8px;
+    background-color: #1A5901;
+    color: #f9f9f9;
+    width: 75%;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+.quantity-input {
+    width: 25%;
+    border-radius: 5px;
+    border: none;
+    padding: 5px;
+}
+
+.confirmationtxt {
+    font-size: 16px;
+    /* Taille standard pour une lecture confortable */
+    line-height: 1.6;
+    /* Espacement entre les lignes pour une meilleure lisibilité */
+    color: #424242;
+    /* Gris foncé pour un contraste avec le fond */
+    text-align: justify;
+    /* Justification pour un look pro (optionnel, peut être centré si préféré) */
+}
+
+.cartfull:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Ombre plus prononcée au survol */
+}
+
+.titre {
+    font-size: 24px;
+    /* Taille de police pour un titre mis en valeur */
+    font-weight: bold;
+    /* Gras pour attirer l’attention */
+    color: #1A5901;
+    /* Vert foncé, thème nature, cohérent avec votre design */
+    margin-bottom: 15px;
+    /* Espacement avec le texte suivant */
+    text-align: center;
+    /* Centré pour un look équilibré */
+}
+
+.produitspharecollumn {
+    justify-self: flex-start;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+    width: 100%;
+    justify-content: space-evenly;
+    padding: 0;
+    list-style: none;
+    align-items: center;
+}
+
+.produitspharecollumn li {
+    margin-top: 20px;
+    align-items: center;
+
+    display: flex;
+    flex-direction: column;
+}

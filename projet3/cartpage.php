@@ -1,3 +1,17 @@
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "botanic_space";
+
+// Créer une connexion avec MySQLi
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+
+if ($conn->connect_error) {
+    die("Échec de la connexion : " . $conn->connect_error);
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -65,7 +79,8 @@
         <div class="cartfull">
             <div class="productanddesc">
                 <div class="productimage">
-                    <img src="tulipe.jpg" class="flowerimg">
+                    <?php </s>> <?>
+                    <!-- <img src="tulipe.jpg" class="flowerimg"> -->
                 </div>
                 <div class="info">
                     <h2>Product Details</h2>
@@ -79,6 +94,7 @@
                         <label for="quantity">Quantity:</label>
                         <input type="number" id="quantity" name="quantity" value="1" min="1" class="quantity-input">
                     </div>
+
                 </div>
             </div>
 
@@ -96,22 +112,22 @@
         <div class="similarproduct">
             <h2>See Similar products</h2>
             <ul class="produitspharecollumn">
-                <li> <img src="roseenpot.jpg" class="imagefleursphare" alt="produit phare">
-                    <p>Roses : 19,99€</p>
-                    <button class="Shopnow">SHOP NOW</button>
-                </li>
-                <li><img src="orchidee.jpg" class="imagefleursphare" alt="produit phare">
-                    <p>Orchidée : 24,99€</p>
-                    <button class="Shopnow">SHOP NOW</button>
-                </li>
-                <li><img src="pivoine.jpg" class="imagefleursphare" alt="produit phare">
-                    <p>Pivoine : 17,99€</p>
-                    <button class="Shopnow">SHOP NOW</button>
-                </li>
-                <li><img src="dahlia.jpg" class="imagefleursphare" alt="produit phare">
-                    <p>Dahlia : 15,99€</p>
-                    <button class="Shopnow">SHOP NOW</button>
-                </li>
+                <?php
+                $sql = "SELECT * FROM products";
+                $result = $conn->query($sql);
+
+                if ($result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                        echo '<li>';
+                        echo '<img src="' . $row["image"] . '" class="imagefleursphare" alt="produit phare">';
+                        echo '<p>' . $row["name"] . ' : ' . $row["price"] . '€</p>';
+                        echo '<button class="Shopnow">SHOP NOW</button>';
+                        echo '</li>';
+                    }
+                } else {
+                    echo "Aucun produit trouvé.";
+                }
+                ?>
             </ul>
 
         </div>
@@ -157,6 +173,7 @@
         const sidebar = document.querySelector('.sidebar')
         sidebar.style.display = 'flex'
     }
+
     function Hidesidebar() {
         const sidebar = document.querySelector('.sidebar')
         sidebar.style.display = 'none'
@@ -165,3 +182,6 @@
 
 
 </html>
+<?php
+$conn->close();
+?>

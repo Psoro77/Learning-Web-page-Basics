@@ -7,51 +7,37 @@ $dbname = "botanic_space";
 // Créer une connexion avec MySQLi
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-
 if ($conn->connect_error) {
     die("Échec de la connexion : " . $conn->connect_error);
 }
-
-$countries = [
-    "+1" => "United States",
-    "+33" => "France",
-    "+44" => "United Kingdom",
-    "+91" => "India",
-    "+81" => "Japan"
-];
-
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
     <link rel="icon" href="icon-siteplante.jpg">
-    <title>Your Botanic Space</title>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-        rel="stylesheet">
+    <title>Login - Botanic Space</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link href="formpage.css" rel="stylesheet">
     <link href="stylesassplante.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 </head>
+
 <nav class="barre">
-    <!-- logo du site-->
     <div class="logo">
-        <a href="main-page-plante.html"><img id="logopart1" alt="logo du site" src="logo-site.jpeg">
-            <img id="logopart2" alt="logo du site" src="logo-titre.png"></a>
+        <a href="main-page-plante.html">
+            <img id="logopart1" alt="logo du site" src="logo-site.jpeg">
+            <img id="logopart2" alt="logo du site" src="logo-titre.png">
+        </a>
     </div>
-    <!-- partie pour la recherche-->
     <div class="search-container">
         <input id="search-tab" placeholder="Search" type="search">
         <button id="button-search"><i class="fas fa-search logo-search"></i></button>
     </div>
-    <!-- partie gauche de la barre-->
     <div class="tabpartiegauche">
-
     </div>
 </nav>
 
@@ -60,66 +46,40 @@ $countries = [
         <div class="backgroundcontainer">
             <img src="image1.jpeg" id="image1">
             <div class="titlebox">
-                <h1>Create an Account</h1>
+                <h1>Login to Your Account</h1>
             </div>
             <div class="formbox">
-                <form action="newclient.php" method="post"
-                    id="newclientform" class="form">
-                    <div class="formpair">
-                        <div class="soloquest">
-                            <label>Full Name : </label>
-                            <input type="text" name="name" required>
-                        </div>
-                        <div class="soloquest">
-                            <label>Address : </label>
-                            <input type="text" name="Address" required><br>
-                        </div>
-                    </div>
-                    <div class="formpair">
-                        <div class="soloquest">
-                            <label>Country : </label>
-                            <select name="country" required>
-                                <option value="">Select a country</option>
-                                <?php foreach ($countries as $code => $name) : ?>
-                                    <option value="<?php echo htmlspecialchars($code); ?>">
-                                        <?php echo htmlspecialchars($name) . " ($code)"; ?>
-                                    </option>
-                                <?php endforeach; ?>
-                            </select>
-                        </div>
-                        <div class="soloquest">
-                            <label>Phone number : </label>
-                            <input type="tel" name="phonenumber" required><br>
-                        </div>
-                    </div>
-                    <div class="spacevide">
-                        <img src="image1.jpeg" id="image1">
-                    </div>
+                <form action="loginprocess.php" method="post" id="loginform" class="form">
                     <div class="formpair">
                         <div class="soloquest">
                             <label>E-mail : </label>
-                            <input type="email" value="email" required placeholder="123@yourmail.com" name="email">
+                            <input type="email" name="email" required placeholder="123@yourmail.com">
                         </div>
+                    </div>
+                    <div class="formpair">
                         <div class="soloquest">
-                            <label>Create a Password : </label>
-                            <input type="password" value="Add Product" required name="password"><br>
+                            <label>Password : </label>
+                            <input type="password" name="password" required placeholder="Enter your password">
+                        </div>
+                    </div>
+                    <div class="formpair">
+                        <div class="soloquest">
+                            <input type="checkbox" name="remember" id="remember">
+                            <label for="remember">Remember me</label>
                         </div>
                     </div>
                     <div class="submitbox">
-                        <button type="submit" name="submit">Submit</button>
+                        <button type="submit" name="submit">Login</button>
                     </div>
-
-
+                    <div class="additional-links">
+                        <a href="forgot-password.php">Forgot Password?</a>
+                        <p><a href="formclient.php">Don't have an account? Sign up</a></p>
+                    </div>
                 </form>
             </div>
         </div>
-
     </div>
 
-
-
-
-    <!-- footer here -->
     <footer>
         <div class="footer-container">
             <div class="footer-section">
@@ -148,13 +108,13 @@ $countries = [
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2024 Botanic Space Tous droits réservés.</p>
+            <p>© 2024 Botanic Space Tous droits réservés.</p>
         </div>
     </footer>
-
 </body>
 
 </html>
+
 <?php
 $conn->close();
 ?>

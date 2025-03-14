@@ -34,12 +34,11 @@
     align-items: center;
     width: 60%;
     height: 80%;
-    color: #690505;
+    color: #1A5901;
 }
 
 .formbox {
     z-index: 2;
-    background-color: #d4d4d4;
     border-radius: 10px;
     display: flex;
     justify-self: center;
@@ -100,7 +99,7 @@
 }
 
 .submitbox button {
-    background-color: #690505;
+    background-color: #FFDE21;
     /* couleur de fond, assortie à votre titlebox */
     color: #F6F6F6;
     /* texte en clair */
@@ -111,14 +110,60 @@
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    font-weight: bold;
 }
 
 .submitbox button:hover {
-    background-color: #8B0000;
+    background-color: #ffde219f;
     /* légère variation pour l'effet hover */
     transform: translateY(-2px);
 }
 
 .submitbox button:active {
     transform: translateY(0);
+}
+
+.soloquest input {
+    border: none;
+    border-radius: 5px;
+    margin-left: 5px;
+}
+
+.soloquest option {
+    border: none;
+    border-radius: 5px;
+    margin-left: 5px;
+    padding: 5px;
+}
+
+.soloquest label {
+    margin-right: 5px;
+}
+
+
+a :hover {
+    color: #1A5901;
+    cursor: pointer;
+    text-decoration: underline;
+
+}
+
+a {
+    color: #1A5901;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.additional-links a {
+    font-weight: bold;
+    color: #F6F6F6;
+}
+
+.additional-links p {
+    font-weight: bold;
+    color: #F6F6F6;
+}
+
+.additional-links :hover {
+    text-decoration: underline;
 }

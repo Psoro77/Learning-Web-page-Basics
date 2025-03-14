@@ -3,14 +3,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
     // Récupération des données du formulaire
     $name = htmlspecialchars($_POST['name']);
     $address = htmlspecialchars($_POST['Address']);
-    $country = htmlspecialchars($_POST['countryext']);
-    $phone = htmlspecialchars($_POST['phonenumber']);
+    $country = htmlspecialchars($_POST['country']);
     $email = htmlspecialchars($_POST['email']);
-    $password = password_hash($_POST['password'], PASSWORD_DEFAULT); // Hash du mot de passe
+    $hashedpassword = password_hash($_POST['password'], PASSWORD_DEFAULT); // Hash du mot de passe
+    $phonenumber = preg_replace('/\s+/', '', $_POST['phonenumber']); // Supprime les espaces
+    $phonenumber = htmlspecialchars($phonenumber); // Sécurise les entrées
+
 
     // Connexion à la base de données (remplacez avec vos infos)
     $host = "localhost";
-    $dbname = "fastwash";
+    $dbname = "botanic_space";
     $username = "root";
     $password_db = "";
 
@@ -19,8 +21,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         // Requête SQL pour insérer les données
-        $sql = "INSERT INTO clients (name, address, country, phone, email, password) 
-                VALUES (:name, :address, :country, :phone, :email, :password)";
+        $sql = "INSERT INTO clients (name, address, country, phonenumber, email, password) 
+                VALUES (:name, :address, :country, :phonenumber, :email, :password)";
         $stmt = $pdo->prepare($sql);
 
         // Exécution de la requête avec les valeurs
@@ -28,9 +30,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
             ':name' => $name,
             ':address' => $address,
             ':country' => $country,
-            ':phone' => $phone,
+            ':phonenumber' => $phonenumber,
             ':email' => $email,
-            ':password' => $password
+            ':password' => $hashedpassword
         ]);
 
         echo "Inscription réussie !";

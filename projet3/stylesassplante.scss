@@ -91,6 +91,19 @@ ensemble*/
     }
 }
 
+.sidebar-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    /* Supprime la sous-ligne par défaut des liens */
+    color: #0ed114;
+    /* Hérite la couleur de .sidebar > li */
+    width: 100%;
+    /* S'assure que le lien prend toute la largeur comme les autres <li> */
+    height: 100%;
+    /* Conserve la hauteur définie par le padding de .sidebar > li */
+}
+
 /* fin de la partie pour la recherche et debus de la troisieme partie*/
 /* sa c'est pour la barre qui va venir a gauche quand on va apuyer sur le menu*/
 .sidebar {

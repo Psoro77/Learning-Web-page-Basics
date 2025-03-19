@@ -43,9 +43,9 @@ require_once 'database.php';
                     <span class="material-symbols-outlined crosssidebar" Onclick="Hidesidebar()">
                         close
                     </span>
-                    <li><span class="material-symbols-outlined symbolist">
-                            person
-                        </span>login</li>
+                    <li><a href="profile.php" class="sidebar-link">
+                            <span class="material-symbols-outlined symbolist">person</span> My Profile
+                        </a></li>
                     <li><span class="material-symbols-outlined symbolist">
                             yard
                         </span>Our plants</li>

@@ -44,7 +44,7 @@ require_once 'database.php';
                         close
                     </span>
                     <li>
-                        <a href="loginpage.php" class="sidebar-link">
+                        <a href="profile.php" class="sidebar-link">
                             <span class="material-symbols-outlined symbolist">person</span> My Profile
                         </a>
                     </li>

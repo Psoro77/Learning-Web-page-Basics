@@ -17,11 +17,11 @@ if ($conn->connect_error) {
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
-    <link rel="icon" href="icon-siteplante.jpg">
+    <link rel="icon" href="../images/icon-siteplante.jpg">
     <title>Login - Botanic Space</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-    <link href="formpage.css" rel="stylesheet">
-    <link href="stylesassplante.css" rel="stylesheet">
+    <link href="../styles/formpage.css" rel="stylesheet">
+    <link href="../styles/stylesassplante.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 </head>
@@ -29,8 +29,8 @@ if ($conn->connect_error) {
 <nav class="barre">
     <div class="logo">
         <a href="main-page-plante.html">
-            <img id="logopart1" alt="logo du site" src="logo-site.jpeg">
-            <img id="logopart2" alt="logo du site" src="logo-titre.png">
+            <img id="logopart1" alt="logo du site" src="../images/logo-site.jpeg">
+            <img id="logopart2" alt="logo du site" src="../images/logo-titre.png">
         </a>
     </div>
     <div class="search-container">
@@ -44,7 +44,7 @@ if ($conn->connect_error) {
 <body>
     <div class="content">
         <div class="backgroundcontainer">
-            <img src="image1.jpeg" id="image1">
+            <img src="../images/image1.jpeg" id="image1">
             <div class="titlebox">
                 <h1>Login to Your Account</h1>
             </div>

@@ -6,13 +6,13 @@ require_once 'database.php';
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
-    <link rel="icon" href="icon-siteplante.jpg">
+    <link rel="icon" href="../images/icon-siteplante.jpg">
     <title>Your Botanic Space</title>
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
-    <link href="buypage.css" rel="stylesheet">
-    <link href="stylesassplante.css" rel="stylesheet">
+    <link href="../styles/buypage.css" rel="stylesheet">
+    <link href="../styles/stylesassplante.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
@@ -25,8 +25,8 @@ require_once 'database.php';
         <!-- logo du site-->
         <div class="logo">
             <a href="main-page-plante.html">
-                <img id="logopart1" alt="logo du site" src="logo-site.jpeg">
-                <img id="logopart2" alt="logo du site" src="logo-titre.png">
+                <img id="logopart1" alt="logo du site" src="../images/logo-site.jpeg">
+                <img id="logopart2" alt="logo du site" src="../images/logo-titre.png">
             </a>
         </div>
         <!-- partie pour la recherche-->
@@ -66,7 +66,7 @@ require_once 'database.php';
         <div class="buyproductbox">
             <div class="productandbuy">
                 <div class="productimage">
-                    <img src="roseenpot.jpg" class="flowerimg">
+                    <img src="../images/roseenpot.jpg" class="flowerimg">
                 </div>
                 <div class="buybox">
                     <div class="buybox">
@@ -105,19 +105,19 @@ require_once 'database.php';
         <div class="similarproduct">
             <h2>See Similar products</h2>
             <ul class="produitspharecollumn">
-                <li> <img src="tulipe.jpg" class="imagefleursphare" alt="produit phare">
+                <li> <img src="../images/tulipe.jpg" class="imagefleursphare" alt="produit phare">
                     <p>Tulipe : 12,99€</p>
                     <button class="Shopnow">SHOP NOW</button>
                 </li>
-                <li><img src="orchidee.jpg" class="imagefleursphare" alt="produit phare">
+                <li><img src="../images/orchidee.jpg" class="imagefleursphare" alt="produit phare">
                     <p>Orchidée : 24,99€</p>
                     <button class="Shopnow">SHOP NOW</button>
                 </li>
-                <li><img src="pivoine.jpg" class="imagefleursphare" alt="produit phare">
+                <li><img src="../images/pivoine.jpg" class="imagefleursphare" alt="produit phare">
                     <p>Pivoine : 17,99€</p>
                     <button class="Shopnow">SHOP NOW</button>
                 </li>
-                <li><img src="dahlia.jpg" class="imagefleursphare" alt="produit phare">
+                <li><img src="../images/dahlia.jpg" class="imagefleursphare" alt="produit phare">
                     <p>Dahlia : 15,99€</p>
                     <button class="Shopnow">SHOP NOW</button>
                 </li>

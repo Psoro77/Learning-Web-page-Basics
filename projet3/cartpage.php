@@ -1,16 +1,5 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "botanic_space";
-
-// Créer une connexion avec MySQLi
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-
-if ($conn->connect_error) {
-    die("Échec de la connexion : " . $conn->connect_error);
-}
+require_once 'database.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -35,8 +24,10 @@ if ($conn->connect_error) {
     <nav class="barre">
         <!-- logo du site-->
         <div class="logo">
-            <img id="logopart1" alt="logo du site" src="logo-site.jpeg">
-            <img id="logopart2" alt="logo du site" src="logo-titre.png">
+            <a href="main-page-plante.html">
+                <img id="logopart1" alt="logo du site" src="logo-site.jpeg">
+                <img id="logopart2" alt="logo du site" src="logo-titre.png">
+            </a>
         </div>
         <!-- partie pour la recherche-->
         <div class="search-container">
@@ -52,9 +43,11 @@ if ($conn->connect_error) {
                     <span class="material-symbols-outlined crosssidebar" Onclick="Hidesidebar()">
                         close
                     </span>
-                    <li><span class="material-symbols-outlined symbolist">
-                            person
-                        </span>login</li>
+                    <li>
+                        <a href="loginpage.php" class="sidebar-link">
+                            <span class="material-symbols-outlined symbolist">person</span> My Profile
+                        </a>
+                    </li>
                     <li><span class="material-symbols-outlined symbolist">
                             yard
                         </span>Our plants</li>
@@ -79,7 +72,7 @@ if ($conn->connect_error) {
         <div class="cartfull">
             <div class="productanddesc">
                 <div class="productimage">
-                    <?php </s>> <?>
+                    <?php ?>
                     <!-- <img src="tulipe.jpg" class="flowerimg"> -->
                 </div>
                 <div class="info">

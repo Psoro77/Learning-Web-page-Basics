@@ -1,3 +1,6 @@
+<?php
+require_once 'database.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -72,7 +75,7 @@
                             <span>4.5/5</span> <i class="fas fa-star"></i> (120 reviews)
                         </div>
                         <br>
-                        <button class="add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                        <button class="add-to-cart" action="add_to_cart.php"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
                         <br>
                         <button class="add-to-favorites"><i class="fas fa-star"></i> Add to Favorites</button>
                         <br>
@@ -163,6 +166,7 @@
         const sidebar = document.querySelector('.sidebar')
         sidebar.style.display = 'flex'
     }
+
     function Hidesidebar() {
         const sidebar = document.querySelector('.sidebar')
         sidebar.style.display = 'none'

@@ -2,3 +2,18 @@ create a database for the project in phpmyadmin called botanic space
 create a product table with productid name price and the address of the image
 create a client table with client id client name address hash-password email  and cart-id
 create a cart-table with client id product id
+
+
+
+SELECT 
+    c.cart_id, c.date, c.status, 
+    cl.client_id, cl.name AS client_name, cl.address, cl.phone,
+    p.product_id, p.name AS product_name, p.price, 
+    ca.quantity
+FROM 
+    cart c
+    JOIN clients cl ON c.client_id = cl.client_id
+    LEFT JOIN cart_to_article ca ON c.cart_id = ca.cart_id
+    LEFT JOIN products p ON ca.product_id = p.product_id
+WHERE 
+    c.cart_id = 1;

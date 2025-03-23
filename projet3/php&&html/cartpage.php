@@ -1,5 +1,5 @@
 <?php
-require_once 'database.php';
+require_once 'auth.php'; //page require to be connected
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -72,8 +72,11 @@ require_once 'database.php';
         <div class="cartfull">
             <div class="productanddesc">
                 <div class="productimage">
-                    <?php ?>
-                    <!-- <img src="tulipe.jpg" class="flowerimg"> -->
+                    <?php
+                    require 'getcart.php';
+
+                    // <!-- <img src="tulipe.jpg" class="flowerimg"> -->
+                    ?>
                 </div>
                 <div class="info">
                     <h2>Product Details</h2>

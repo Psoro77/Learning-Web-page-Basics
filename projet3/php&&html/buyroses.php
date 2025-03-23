@@ -171,6 +171,26 @@ require_once 'database.php';
         const sidebar = document.querySelector('.sidebar')
         sidebar.style.display = 'none'
     }
+    document.querySelector('.add-to-cart').addEventListener('click', function() {
+        let productId = 1; // ID du produit (à récupérer dynamiquement)
+        let quantity = document.getElementById('quantity').value;
+
+        fetch('add_to_cart.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    productId,
+                    quantity
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert(data.message);
+            })
+            .catch(error => console.error('Erreur:', error));
+    });
 </script>
 
 </html>

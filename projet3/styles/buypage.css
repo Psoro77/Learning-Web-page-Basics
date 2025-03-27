@@ -130,7 +130,7 @@
     background-color: #1A5901;
     color: #f9f9f9;
     width: 75%;
-    padding: 8px;
+    padding: 2px;
     border-radius: 5px;
 }
 
@@ -189,4 +189,14 @@
 
     display: flex;
     flex-direction: column;
+}
+
+.buybox button:hover {
+    transform: scale(1.05);
+}
+
+
+
+.buybox button:active {
+    transform: scale(0.98);
 }

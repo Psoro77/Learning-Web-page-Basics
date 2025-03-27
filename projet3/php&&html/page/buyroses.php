@@ -18,6 +18,8 @@ require_once '../todb/database.php';
     ?>
     <div class="content">
         <div class="buyproductbox">
+
+
             <div class="productandbuy">
                 <div class="productimage">
                     <img src="../../images/roseenpot.jpg" class="flowerimg">
@@ -29,8 +31,6 @@ require_once '../todb/database.php';
                             <span>4.5/5</span> <i class="fas fa-star"></i> (120 reviews)
                         </div>
                         <br>
-                        <button class="add-to-cart" action="add_to_cart.php"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
-                        <br>
                         <button class="add-to-favorites"><i class="fas fa-star"></i> Add to Favorites</button>
                         <br>
                         <button class="buy-now"><i class="fas fa-bolt"></i> Buy Now</button>
@@ -40,6 +40,9 @@ require_once '../todb/database.php';
                             <label for="quantity">Quantity:</label>
                             <input type="number" id="quantity" name="quantity" value="1" min="1" class="quantity-input">
                         </div>
+                        <button class="add-to-cart" action="add_to_cart.php" data-product-id="1"><i class="fas fa-shopping-cart"></i> Add to
+                        </button>
+                        <br>
                     </div>
                 </div>
             </div>
@@ -98,11 +101,16 @@ require_once '../todb/database.php';
         const sidebar = document.querySelector('.sidebar')
         sidebar.style.display = 'none'
     }
-    document.querySelector('.add-to-cart').addEventListener('click', function() {
-        let productId = 1; // ID du produit (à récupérer dynamiquement)
+
+
+
+
+    //partie pour ajouter un produit a la cart
+    document.querySelector('.add_to_cart').addEventListener('click', function() {
+        let productId = document.querySelector('.add-to-cart').getAttribute('data-product-id');
         let quantity = document.getElementById('quantity').value;
 
-        fetch('add_to_cart.php', {
+        fetch('add-to-cart.php', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

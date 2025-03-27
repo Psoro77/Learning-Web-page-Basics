@@ -45,7 +45,7 @@ if ($conn->connect_error) {
                 <h1>Login to Your Account</h1>
             </div>
             <div class="formbox">
-                <form action="loginprocess.php" method="post" id="loginform" class="form">
+                <form action="../todb/loginprocess.php" method="post" id="loginform" class="form">
                     <div class="formpair">
                         <div class="soloquest">
                             <label>E-mail : </label>

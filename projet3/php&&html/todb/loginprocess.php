@@ -67,7 +67,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 // Si erreur, retourner à la page de login avec le message
 if (isset($error)) {
     $_SESSION['error'] = $error;
-    header("Location: loginpage.php");
+    header("Location: ../page/loginpage.php");
     exit();
 }
 

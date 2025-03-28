@@ -1,5 +1,6 @@
 <?php
 require_once '../todb/database.php';
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,8 +14,10 @@ require_once '../todb/database.php';
 
 <body>
     <!-- first part with the nav bar -->
+
     <?php
-    include('../views/navbar.php')
+    include('../views/succesmessage.php');
+    include('../views/navbar.php');
     ?>
     <div class="content">
         <div class="buyproductbox">
@@ -37,12 +40,15 @@ require_once '../todb/database.php';
                         <br>
                         <button class="share"><i class="fas fa-share"></i> Share</button>
                         <div class="quantity-selector">
-                            <label for="quantity">Quantity:</label>
-                            <input type="number" id="quantity" name="quantity" value="1" min="1" class="quantity-input">
+                            <form action="../todb/add_to_cart.php" method="post">
+                                <input type="hidden" name="product_id" value="2">
+                                <label for="quantity">Quantity:</label>
+                                <input type="number" id="quantity" name="quantity" min="1" class="quantity-input">
                         </div>
-                        <button class="add-to-cart" action="add_to_cart.php" data-product-id="1"><i class="fas fa-shopping-cart"></i> Add to
+                        <button class="add-to-cart" type="submit" name="productsubm"><i class="fas fa-shopping-cart"></i> Add to
                         </button>
                         <br>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -101,31 +107,6 @@ require_once '../todb/database.php';
         const sidebar = document.querySelector('.sidebar')
         sidebar.style.display = 'none'
     }
-
-
-
-
-    //partie pour ajouter un produit a la cart
-    document.querySelector('.add_to_cart').addEventListener('click', function() {
-        let productId = document.querySelector('.add-to-cart').getAttribute('data-product-id');
-        let quantity = document.getElementById('quantity').value;
-
-        fetch('add-to-cart.php', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    productId,
-                    quantity
-                })
-            })
-            .then(response => response.json())
-            .then(data => {
-                alert(data.message);
-            })
-            .catch(error => console.error('Erreur:', error));
-    });
 </script>
 
 </html>

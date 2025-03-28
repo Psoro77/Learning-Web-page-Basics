@@ -50,15 +50,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             // Rediriger vers une page sécurisée
             // a modifier : header("Location: dashboard.php");
-            echo "connexion reussie";
+            header("Location: ../page/profile.php");
             exit();
         } else {
             // Mot de passe incorrect
-            $error = "Mot de passe incorrect.";
+            $_SESSION['error'] = "wrong password";
+            header('Location: ' . $_SERVER['HTTP_REFERER']);
+            exit();
         }
     } else {
         // Email non trouvé
-        $error = "Aucun compte associé à cet email.";
+        $_SESSION['error'] = "wrong email";
+        header('Location: ' . $_SERVER['HTTP_REFERER']);
+        exit();
     }
 
     $stmt->close();

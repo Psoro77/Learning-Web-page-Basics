@@ -167,3 +167,48 @@ a {
 .additional-links :hover {
     text-decoration: underline;
 }
+
+.success-message {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #4CAF50;
+    /* Vert pour succès */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    animation: fadeOut 5s forwards;
+    /* Disparaît après 5 secondes */
+}
+
+.error-message {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #f44336;
+    /* Rouge pour erreur */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    animation: fadeOut 5s forwards;
+    /* Disparaît après 5 secondes */
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        display: none;
+    }
+}

@@ -1,6 +1,5 @@
 <?php
 require_once '../todb/auth.php';
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -45,7 +44,7 @@ require_once '../todb/auth.php';
         <div class="similarproduct">
             <h3>Your cart</h3>
             <p>Nombre d'articles : 3</p>
-            <button onclick="window.location.href='cartpage.php'">Voir le panier</button>
+            <a href='cartpage.php'><button>Voir le panier</button></a>
         </div>
     </div>
 

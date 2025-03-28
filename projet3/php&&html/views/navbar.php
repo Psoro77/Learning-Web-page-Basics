@@ -13,7 +13,7 @@
     </div>
     <!-- partie gauche de la barre-->
     <div class="tabpartiegauche">
-        <i class="fas fa-shopping-cart logo-panier"></i>
+        <a href="cartpage.php" class="logo-panier"><i class="fas fa-shopping-cart"></i></a>
         <i class="fas fa-bars menu-bar" onclick="ShowSideBar()"></i><!--afficher le menu interieur-->
         <div> <!-- barre interieure-->
             <ul class="sidebar" style="list-style: none; padding: 0;">

@@ -1,66 +1,80 @@
 <?php
-session_start();
-require_once 'database.php';
-
-header('Content-Type: application/json');
-
-if (!isset($_SESSION['client_id'])) {
-    echo json_encode(['success' => false, 'message' => 'Veuillez vous connecter pour ajouter au panier']);
-    exit;
+require_once('auth.php');
+require_once('database.php');
+if (!isset($_SESSION['clients_id'])) {
+    header('Location: ../page/loginpage.php');
+    exit();
 }
 
-$client_id = $_SESSION['client_id'];
-$data = json_decode(file_get_contents('php://input'), true);
 
-$product_id = isset($data['productId']) ? (int)$data['productId'] : 0;
-$quantity = isset($data['quantity']) ? (int)$data['quantity'] : 0;
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $product_id = filter_input(INPUT_POST, 'product_id', FILTER_VALIDATE_INT);
+    $quantity = filter_input(INPUT_POST, 'quantity', FILTER_VALIDATE_INT);
 
-// Validate inputs
-if ($product_id <= 0 || $quantity <= 0) {
-    echo json_encode(['success' => false, 'message' => 'Produit ou quantité invalide']);
-    exit;
-}
-
-try {
-    // Check if product exists
-    $stmt = $pdo->prepare("SELECT id FROM products WHERE id = ?");
-    $stmt->execute([$product_id]);
-    if ($stmt->rowCount() == 0) {
-        echo json_encode(['success' => false, 'message' => 'Produit introuvable']);
-        exit;
+    // Vérifier que les données sont valides
+    if ($product_id === false || $quantity === false || $quantity < 1) {
+        $_SESSION['error'] = "Données invalides";
+        header('Location: ' . $_SERVER['HTTP_REFERER']);
+        exit();
     }
 
-    // Check for active cart
-    $stmt = $pdo->prepare("SELECT id FROM cart WHERE client_id = ? AND statut = 'active'");
-    $stmt->execute([$client_id]);
-    $cart = $stmt->fetch(PDO::FETCH_ASSOC);
+    // Récupérer les informations du produit
+    $stmt = $conn->prepare("SELECT * FROM products WHERE id = ?");
+    $stmt->bind_param("i", $product_id);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $product = $result->fetch_assoc();
+    $stmt->close();
 
-    if (!$cart) {
-        // Create new cart
-        $stmt = $pdo->prepare("INSERT INTO cart (client_id, date_creation, statut) VALUES (?, NOW(), 'active')");
-        $stmt->execute([$client_id]);
-        $cart_id = $pdo->lastInsertId();
+    if (!$product) {
+        $_SESSION['error'] = "Produit non trouvé";
+        header('Location: ' . $_SERVER['HTTP_REFERER']);
+        exit();
+    }
+
+    // Vérifier si l'utilisateur a déjà un panier
+    $client_id = $_SESSION['clients_id'];
+    $stmt = $conn->prepare("SELECT id FROM carts WHERE client_id = ?");
+    $stmt->bind_param("i", $client_id);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $cart = $result->fetch_assoc();
+    $cart_id = $cart ? $cart['id'] : null;
+    $stmt->close();
+
+    // Si pas de panier, en créer un
+    if (!$cart_id) {
+        $stmt = $conn->prepare("INSERT INTO carts (client_id, date_creation ) VALUES (?, NOW())");
+        $stmt->bind_param("i", $client_id);
+        $stmt->execute();
+        $cart_id = $conn->insert_id;
+        $stmt->close();
+    }
+
+    // Vérifier si l'article existe déjà dans le panier
+    $stmt = $conn->prepare("SELECT * FROM cart_to_articles WHERE carts_id = ? AND products_id = ?");
+    $stmt->bind_param("ii", $cart_id, $product_id);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $cart_item = $result->fetch_assoc();
+    $stmt->close();
+
+    if ($cart_item) {
+        // Mettre à jour la quantité
+        $new_quantity = $cart_item['quantity'] + $quantity;
+        $stmt = $conn->prepare("UPDATE cart_to_articles SET quantity = ? WHERE id = ?");
+        $stmt->bind_param("ii", $new_quantity, $cart_item['id']);
+        $stmt->execute();
+        $stmt->close();
     } else {
-        $cart_id = $cart['id'];
+        // Ajouter un nouvel article
+        $stmt = $conn->prepare("INSERT INTO cart_to_articles (carts_id, products_id, quantity) VALUES (?, ?, ?)");
+        $stmt->bind_param("iii", $cart_id, $product_id, $quantity);
+        $stmt->execute();
+        $stmt->close();
     }
 
-    // Check if product is already in cart_to_article
-    $stmt = $pdo->prepare("SELECT quantity FROM cart_to_article WHERE carts_id = ? AND products_id = ?");
-    $stmt->execute([$cart_id, $product_id]);
-    $existing = $stmt->fetch(PDO::FETCH_ASSOC);
-
-    if ($existing) {
-        // Update quantity
-        $new_quantity = $existing['quantity'] + $quantity;
-        $stmt = $pdo->prepare("UPDATE cart_to_article SET quantity = ? WHERE carts_id = ? AND products_id = ?");
-        $stmt->execute([$new_quantity, $cart_id, $product_id]);
-    } else {
-        // Insert new entry
-        $stmt = $pdo->prepare("INSERT INTO cart_to_article (carts_id, products_id, quantity) VALUES (?, ?, ?)");
-        $stmt->execute([$cart_id, $product_id, $quantity]);
-    }
-
-    echo json_encode(['success' => true, 'message' => 'Produit ajouté au panier']);
-} catch (Exception $e) {
-    echo json_encode(['success' => false, 'message' => 'Erreur serveur : ' . $e->getMessage()]);
+    $_SESSION['success'] = "Produit ajouté au panier avec succès";
+    header('Location: ' . $_SERVER['HTTP_REFERER']);
+    exit();
 }

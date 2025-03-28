@@ -4,7 +4,7 @@ session_start();
 
 // Vérifier si l'utilisateur est connecté
 if (!isset($_SESSION['clients_id'])) {
-    header("Location: loginpage.php");
+    header("Location: ../page/loginpage.php");
     exit();
 }
 

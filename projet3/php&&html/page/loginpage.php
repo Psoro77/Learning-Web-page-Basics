@@ -1,15 +1,7 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "botanic_space";
+include('../todb/database.php');
+session_start(); // Permet d'utiliser des messages de session comme les erreurs ou succès.
 
-// Créer une connexion avec MySQLi
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-    die("Échec de la connexion : " . $conn->connect_error);
-}
 ?>
 
 <!DOCTYPE html>
@@ -21,7 +13,9 @@ if ($conn->connect_error) {
     include('../views/head.php');
     ?>
 </head>
-
+<?php
+include('../views/succesmessage.php');
+?>
 <nav class="barre">
     <div class="logo">
         <a href="index.php">

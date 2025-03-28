@@ -25,8 +25,13 @@
         <?php endforeach; ?>
         <div class="confirmation">
             <p>Total of cart : <?php echo number_format(array_sum(array_column($cart_items, 'total_price_per_product')), 2); ?> €</p>
-            <button class="confirmbtn">Go to checkout</button>
-            <button class="modifycartbtn">Modify the cart</button>
+            <div class="buttons">
+                <button class="confirmbtn">Go to checkout</button>
+                <form action="../todb/deletecart.php" method="post">
+                    <button class="deletebtt" type="submit">Delete cart</button>
+                </form>
+                <button class="modifycartbtn">Modify the cart</button>
+            </div>
         </div>
     <?php endif; ?>
 </div>

@@ -202,15 +202,16 @@
     border: none;
     border-radius: 5px;
     padding: 1.5vh;
+    cursor: pointer;
 }
 
 .modifycartbtn {
-    margin-left: 50%;
     background-color: #360159;
     color: #F6F6F6;
     border: none;
     border-radius: 5px;
     padding: 1.5vh;
+    cursor: pointer;
 }
 
 .logoutbtn {
@@ -250,4 +251,18 @@
 
 .seecart:hover {
     transform: scale(1.05);
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-around;
+}
+
+.deletebtt {
+    background-color: red;
+    color: #F6F6F6;
+    border: none;
+    border-radius: 5px;
+    padding: 1.5vh;
+    cursor: pointer;
 }

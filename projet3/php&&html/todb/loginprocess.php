@@ -76,3 +76,24 @@ if (isset($error)) {
 }
 
 $conn->close();
+
+
+if (isset($_GET['logout']) || isset($_POST['logout'])) {
+    // Supprimer toutes les variables de session
+    $_SESSION = array();
+
+    // Supprimer le cookie "remember me" s'il existe
+    if (isset($_COOKIE['remember_me'])) {
+        setcookie('remember_me', '', time() - 3600, "/", "", true, true);
+    }
+
+    // Détruire la session
+    session_destroy();
+
+    // Rediriger vers la page de connexion
+    session_start();
+    $_SESSION['error'] = "you have been logged out";
+    header("Location: ../page/index.php");
+
+    exit();
+}

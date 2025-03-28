@@ -1,0 +1,133 @@
+.crtfll {
+    background-color: #F6F6F6;
+    border-radius: 5px;
+    display: flex;
+    /* Enable Flexbox */
+    flex-direction: column;
+    /* Stack productanddesc and confirmation vertically */
+    width: 100%;
+    /* Full width for simplicity; adjust if needed */
+    height: 100%;
+    /* Adjust height based on content */
+    margin-bottom: 20px;
+
+
+
+    h2 {
+        color: green;
+        align-self: center;
+    }
+
+    /* Space between this and similarproduct */
+    .productanddesc {
+        display: flex;
+        /* Enable Flexbox for horizontal layout */
+        flex-direction: row;
+        /* Side-by-side alignment */
+        width: 100%;
+        /* Full width */
+        gap: 20px;
+
+        /* Space between productimage and info */
+        .prdctimg {
+            flex: 1;
+            /* Equal space allocation */
+            /* Temporary for visualization */
+            height: 100%;
+            width: 100%;
+            /* Example height; adjust as needed */
+            background-color: #1A5901;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            border-radius: 5px;
+            margin-top: 20px;
+            margin-left: 20px;
+            padding: 2%;
+
+            .flowerimg {
+                width: 75%;
+                height: 80;
+                border-radius: 5px;
+            }
+
+        }
+
+        .info {
+            flex: 1;
+            /* Equal space allocation */
+
+            /* Temporary for visualization */
+            height: 300px;
+            /* Example height; adjust as needed */
+            border: 3px black;
+            display: flex;
+            flex-direction: column;
+            justify-items: center;
+            align-items: center;
+            text-align: center;
+
+            button {
+                background-color: #1A5901;
+                border-radius: 4px;
+                color: white;
+                width: 75%;
+                border: none;
+                padding: 8px;
+                margin: 5px;
+                cursor: pointer;
+
+            }
+
+            h2 {
+                color: #1A5901;
+
+            }
+
+            .rating {
+                color: #1A5901;
+            }
+
+            .qt-selector {
+                justify-self: center;
+                margin-top: 8px;
+                color: #1A5901;
+                width: 75%;
+                padding: 8px;
+                border-radius: 5px;
+
+                .quantity-input {
+                    width: 35%;
+                    border-radius: 5px;
+                    border: none;
+                    padding: 5px;
+                }
+            }
+        }
+    }
+
+    .confirmation {
+        display: flex;
+        flex-direction: column;
+
+        .cfrmbtn {
+            align-self: center;
+            justify-self: center;
+            background-color: #cfd305;
+            border: none;
+            border-radius: 3px;
+            padding: 5px;
+            color: red;
+            font-weight: bold;
+            cursor: pointer;
+
+            :hover {
+
+                transform: scale(1.05);
+            }
+        }
+
+
+    }
+
+}

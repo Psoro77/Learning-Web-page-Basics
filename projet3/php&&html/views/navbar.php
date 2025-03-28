@@ -1,3 +1,6 @@
+<?php
+include('../views/succesmessage.php');
+?>
 <nav class="barre">
     <!-- logo du site-->
     <div class="logo">

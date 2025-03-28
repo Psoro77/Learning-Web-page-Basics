@@ -1,5 +1,8 @@
 <?php
 require_once '../todb/auth.php';
+require_once '../todb/getcart.php'; // Inclut les fonctions pour récupérer les données du panier
+// Récupérer les éléments du panier
+$cart_items = getCartItems($conn);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -7,6 +10,7 @@ require_once '../todb/auth.php';
 
 <head>
     <?php
+    echo ' <link href="../../styles/cartprofile.css" rel="stylesheet">';
     echo ' <link href="../../styles/cartpage.css" rel="stylesheet">';
     include('../views/head.php');
     ?>
@@ -38,13 +42,18 @@ require_once '../todb/auth.php';
                         <?php echo htmlspecialchars($user['email']); ?></label>
                     <p><strong>Téléphone :</strong> <?php echo htmlspecialchars($user['phonenumber']); ?></p>
                     <p><strong>Adresse :</strong> <?php echo htmlspecialchars($user['address']); ?></p>
+                    <a href="../todb/loginprocess.php?logout=true" class="logoutbtn">
+                        <p>Log out</p>
+                    </a>
                 </div>
             </div>
         </div>
         <div class="similarproduct">
             <h3>Your cart</h3>
-            <p>Nombre d'articles : 3</p>
-            <a href='cartpage.php'><button>Voir le panier</button></a>
+            <?php
+            include('../views/cartviewprofile.php')
+            ?>
+            <a href='cartpage.php'><button class="seecart">See the cart</button></a>
         </div>
     </div>
 

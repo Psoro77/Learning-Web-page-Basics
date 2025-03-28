@@ -35,7 +35,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
             ':password' => $hashedpassword
         ]);
 
-        echo "Inscription réussie !";
+        $_SESSION['success'] = "your account have been created";
+        header("Location: ../page/thanks.php");
     } catch (PDOException $e) {
         echo "Erreur : " . $e->getMessage();
     }

@@ -62,7 +62,7 @@
     /* Full width */
     gap: 20px;
     /* Space between productimage and info */
-
+    margin-bottom: 20px;
 }
 
 /* Product image section */
@@ -211,4 +211,43 @@
     border: none;
     border-radius: 5px;
     padding: 1.5vh;
+}
+
+.logoutbtn {
+    background-color: #1A5901;
+    border: 2px;
+    border-color: #1A5901;
+    border-radius: 3px;
+    color: #F6F6F6;
+    text-decoration: none;
+    height: 6vh;
+    width: 60%;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.logoutbtn:hover {
+    transform: scale(1.05);
+}
+
+.seecart {
+    margin-bottom: 14px;
+    background-color: #1A5901;
+    border: 2px;
+    border-color: #1A5901;
+    border-radius: 3px;
+    color: #F6F6F6;
+    padding: 3px;
+    padding-left: 6px;
+    padding-right: 6px;
+    cursor: pointer;
+}
+
+.seecart:hover {
+    transform: scale(1.05);
 }

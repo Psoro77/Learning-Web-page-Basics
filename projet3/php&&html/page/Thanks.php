@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,7 +22,7 @@
                 <div class="form">
                     <div class="formpair">
                         <div class="soloquest">
-                            <a href="main-page-plante.php"><label>continue browsing</label></a>
+                            <a href="index.php"><label>continue browsing</label></a>
                         </div>
                     </div>
 

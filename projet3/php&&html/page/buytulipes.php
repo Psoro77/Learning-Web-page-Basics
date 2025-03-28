@@ -15,7 +15,6 @@ session_start();
 <body>
     <!-- Première partie avec la barre de navigation -->
     <?php
-    include('../views/succesmessage.php');
     include('../views/navbar.php');
     ?>
     <div class="content">

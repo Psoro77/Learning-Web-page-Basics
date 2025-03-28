@@ -56,7 +56,7 @@ $countries = [
                 <h1>Create an Account</h1>
             </div>
             <div class="formbox">
-                <form action="newclient.php" method="post"
+                <form action="../todb/newclient.php" method="post"
                     id="newclientform" class="form">
                     <div class="formpair">
                         <div class="soloquest">

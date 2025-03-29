@@ -91,16 +91,8 @@ session_start();
     ?>
 </body>
 <!-- Fonction pour afficher et masquer la barre de menu -->
-<script>
-    function ShowSideBar() {
-        const sidebar = document.querySelector('.sidebar');
-        sidebar.style.display = 'flex';
-    }
-
-    function Hidesidebar() {
-        const sidebar = document.querySelector('.sidebar');
-        sidebar.style.display = 'none';
-    }
-</script>
+<?php
+include('../views/jsscriptnav.php')
+?>
 
 </html>

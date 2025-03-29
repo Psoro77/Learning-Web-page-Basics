@@ -32,7 +32,7 @@
             <div class="confirmation">
                 <p>Total of cart : <?php echo number_format(array_sum(array_column($cart_items, 'total_price_per_product')), 2); ?> €</p>
                 <div class="buttons">
-                    <a href="checkout.php" class="confirmbtn">Go to checkout</a>
+                    <a href="checkoutpage.php" class="confirmbtn">Go to checkout</a>
 
                     <button type="submit" name="update" value="1" class="modifycartbtn">Update Cart</button>
                 </div>

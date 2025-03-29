@@ -16,7 +16,7 @@ session_start();
         <div class="backgroundcontainer">
             <img src="../../images/image1.jpeg" id="image1">
             <div class="titlebox">
-                <h1>Thanks for creating an account</h1>
+                <h1>Thanks</h1>
             </div>
             <div class="formbox">
                 <div class="form">

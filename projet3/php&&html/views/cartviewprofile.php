@@ -20,7 +20,7 @@
         <?php endforeach; ?>
         <div class="cfn">
             <p>Total of cart : <?php echo number_format(array_sum(array_column($cart_items, 'total_price_per_product')), 2); ?> €</p>
-            <button class="cfrmbtn">Go to checkout</button>
+            <a href="checkoutpage.php" class="confirmbtn">Go to checkout</a>
         </div>
     <?php endif; ?>
 </div>

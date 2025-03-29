@@ -59,7 +59,7 @@
 .formpair {
     display: flex;
     justify-content: space-evenly;
-
+    margin-bottom: 30px;
 
 }
 
@@ -166,4 +166,24 @@ a {
 
 .additional-links :hover {
     text-decoration: underline;
+}
+
+H2 {
+    color: #1A5901
+}
+
+.listeitem {
+    display: flex;
+    text-decoration: none;
+    justify-content: space-around;
+    background-color: #FFDE21;
+    color: #1A5901;
+    padding: 10px;
+    border-radius: 5px;
+    list-style-type: none;
+}
+
+.total {
+    font-weight: bold;
+    color: #1A5901;
 }

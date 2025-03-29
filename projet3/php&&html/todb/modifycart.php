@@ -56,6 +56,20 @@ if (isset($_POST['remove'])) {
             $stmt->bind_param("ii", $carts_id, $product_id);
             $stmt->execute();
             $stmt->close();
+
+            $stmt = $conn->prepare("SELECT 1 FROM cart_to_articles WHERE carts_id = ? LIMIT 1");
+            $stmt->bind_param("i", $carts_id);
+            $stmt->execute();
+            $stmt->store_result();
+
+            // S'il n'existe plus, supprimer la ligne correspondante dans carts
+            if ($stmt->num_rows == 0) {
+                $stmt->close();
+                $stmt = $conn->prepare("DELETE FROM carts WHERE id = ?");
+                $stmt->bind_param("i", $carts_id);
+                $stmt->execute();
+            }
+            $stmt->close();
         } else {
 
             // Mettre à jour la quantité dans cart_to_articles

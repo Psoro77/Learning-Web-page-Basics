@@ -90,11 +90,13 @@
   border: none;
   padding: 5px;
 }
-.crtfll .confirmation {
+.crtfll .cfn {
   display: flex;
   flex-direction: column;
+  margin-top: 0px;
+  align-items: center;
 }
-.crtfll .confirmation .cfrmbtn {
+.crtfll .cfn .cfrmbtn {
   align-self: center;
   justify-self: center;
   background-color: #cfd305;
@@ -105,6 +107,6 @@
   font-weight: bold;
   cursor: pointer;
 }
-.crtfll .confirmation .cfrmbtn :hover {
+.crtfll .cfn .cfrmbtn :hover {
   transform: scale(1.05);
 }/*# sourceMappingURL=cartprofile.css.map */

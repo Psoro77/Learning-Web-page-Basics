@@ -106,9 +106,11 @@
         }
     }
 
-    .confirmation {
+    .cfn {
         display: flex;
         flex-direction: column;
+        margin-top: 0px;
+        align-items: center;
 
         .cfrmbtn {
             align-self: center;

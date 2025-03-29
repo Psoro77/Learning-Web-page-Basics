@@ -42,16 +42,17 @@ body {
 
 @keyframes fadeOut {
     0% {
-        opacity: 1;
+        transform: translateX(0);
     }
 
     80% {
         opacity: 1;
+        transform: translateX(0);
     }
 
     100% {
         opacity: 0;
-        display: none;
+        transform: translateX(-100vw);
     }
 }
 

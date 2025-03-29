@@ -80,6 +80,6 @@ if (isset($_POST['remove'])) {
         }
     }
 }
-$_SESSION['sucess'] = "modification taken";
+$_SESSION['success'] = "modification taken";
 header('Location: ../page/cartpage.php');
 exit;

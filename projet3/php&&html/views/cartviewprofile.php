@@ -18,7 +18,7 @@
                 </div>
             </div>
         <?php endforeach; ?>
-        <div class="confirmation">
+        <div class="cfn">
             <p>Total of cart : <?php echo number_format(array_sum(array_column($cart_items, 'total_price_per_product')), 2); ?> €</p>
             <button class="cfrmbtn">Go to checkout</button>
         </div>

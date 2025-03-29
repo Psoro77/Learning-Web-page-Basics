@@ -197,21 +197,23 @@
 }
 
 .confirmbtn {
-    background-color: rgb(199, 98, 3);
+    background-color: #1A5901;
     color: #F6F6F6;
     border: none;
     border-radius: 5px;
     padding: 1.5vh;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .modifycartbtn {
-    background-color: #360159;
-    color: #F6F6F6;
+    background-color: #FFD700;
+    color: #1A5901;
     border: none;
     border-radius: 5px;
     padding: 1.5vh;
     cursor: pointer;
+    font-weight: bold;
 }
 
 .logoutbtn {
@@ -265,4 +267,11 @@
     border-radius: 5px;
     padding: 1.5vh;
     cursor: pointer;
+}
+
+.deleteform {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5vh;
+
 }

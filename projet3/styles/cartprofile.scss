@@ -26,7 +26,7 @@
         /* Side-by-side alignment */
         width: 100%;
         /* Full width */
-        gap: 20px;
+        gap: 0px;
 
         /* Space between productimage and info */
         .prdctimg {
@@ -58,7 +58,7 @@
             /* Equal space allocation */
 
             /* Temporary for visualization */
-            height: 300px;
+            height: 200px;
             /* Example height; adjust as needed */
             border: 3px black;
             display: flex;

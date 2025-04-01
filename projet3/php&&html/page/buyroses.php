@@ -30,6 +30,7 @@ session_start();
                 <div class="buybox">
                     <div class="buybox">
                         <h2>Product Options</h2>
+                        <p class="price">24,99€</p>
                         <div class="rating">
                             <span>4.5/5</span> <i class="fas fa-star"></i> (120 reviews)
                         </div>
@@ -70,7 +71,7 @@ session_start();
             <ul class="produitspharecollumn">
                 <li> <img src="../../images/tulipe.jpg" class="imagefleursphare" alt="produit phare">
                     <p>Tulipe : 12,99€</p>
-                    <button class="Shopnow">SHOP NOW</button>
+                    <a href="buytulipes.php"><button class="Shopnow">SHOP NOW</button></a>
                 </li>
                 <li><img src="../../images/orchidee.jpg" class="imagefleursphare" alt="produit phare">
                     <p>Orchidée : 24,99€</p>
@@ -78,11 +79,7 @@ session_start();
                 </li>
                 <li><img src="../../images/pivoine.jpg" class="imagefleursphare" alt="produit phare">
                     <p>Pivoine : 17,99€</p>
-                    <button class="Shopnow">SHOP NOW</button>
-                </li>
-                <li><img src="../../images/dahlia.jpg" class="imagefleursphare" alt="produit phare">
-                    <p>Dahlia : 15,99€</p>
-                    <button class="Shopnow">SHOP NOW</button>
+                    <a href="buypivoine.php"><button class="Shopnow">SHOP NOW</button></a>
                 </li>
             </ul>
 

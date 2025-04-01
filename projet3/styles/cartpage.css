@@ -275,3 +275,17 @@
     margin-bottom: 5vh;
 
 }
+
+.emptycart {
+    display: flex;
+    align-self: center;
+    color: red;
+    font-size: larger;
+    font-weight: bold;
+}
+
+.shoplink {
+    align-self: center;
+    font-weight: bold;
+    margin-bottom: 30px;
+}

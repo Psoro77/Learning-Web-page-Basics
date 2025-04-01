@@ -1,7 +1,7 @@
 <div class="crtfll">
     <h2>Your Cart</h2>
     <?php if (empty($cart_items)): ?>
-        <p>Your Cart is empty</p>
+        <p class="emptycart">Your Cart is empty</p>
     <?php else: ?>
         <?php foreach ($cart_items as $item): ?>
             <div class="productanddesc">

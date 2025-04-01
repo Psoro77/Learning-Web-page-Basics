@@ -1,7 +1,8 @@
 <div class="cartfull">
     <h2>Your Cart</h2>
     <?php if (empty($cart_items)): ?>
-        <p>Your Cart is empty</p>
+        <p class="emptycart">Your Cart is empty</p>
+        <a href="buyroses.php" class="shoplink"><button class="Shopnow">SHOP NOW</button></a>
     <?php else: ?>
         <form action="../todb/modifycart.php" method="post">
             <?php foreach ($cart_items as $item): ?>

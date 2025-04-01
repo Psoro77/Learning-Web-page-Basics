@@ -26,19 +26,19 @@
         <ul class="produitsphare">
             <li> <img src="../../images/roseenpot.jpg" class="imagefleursphare" alt="produit phare">
                 <p>Roses : 19,99€</p>
-                <button class="Shopnow"><a href="buyroses.php">SHOP NOW</a></button>
+                <a href="buyroses.php"><button class="Shopnow">SHOP NOW</button></a>
             </li>
             <li> <img src="../../images/tulipe.jpg" class="imagefleursphare" alt="produit phare">
                 <p>Tulipe : 12,99€</p>
-                <button class="Shopnow"><a href="buytulipes.php">SHOP NOW</a></button>
+                <a href="buytulipes.php"><button class="Shopnow">SHOP NOW</button></a>
             </li>
             <li><img src="../../images/orchidee.jpg" class="imagefleursphare" alt="produit phare">
                 <p>Orchidée : 24,99€</p>
-                <button class="Shopnow">SHOP NOW</button>
+                <a href="buyorchidee.php"><button class="Shopnow">SHOP NOW</button></a>
             </li>
             <li><img src="../../images/pivoine.jpg" class="imagefleursphare" alt="produit phare">
                 <p>Pivoine : 17,99€</p>
-                <button class="Shopnow">SHOP NOW</button>
+                <a href="buypivoine.php"><button class="Shopnow">SHOP NOW</button></a>
             </li>
             <li><img src="../../images/dahlia.jpg" class="imagefleursphare" alt="produit phare">
                 <p>Dahlia : 15,99€</p>

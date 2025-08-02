@@ -21,8 +21,7 @@ Ratings and similar product suggestions
 The project includes reusable components like the navbar, footer, and success messages to keep the code modular and organized.
 
 
-![Preview](images/preview-home.png)
-![Product Page](images/preview-product.png)
+![Preview](../assets/ezgif-4c0a0bc0c190df.gif)
 
 ---
 
